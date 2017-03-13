@@ -8,12 +8,7 @@ This package includes support for [Azure Storage Emulator](https://azure.microso
 # Getting Started
 
  1. `go get -u github.com/Azure/azure-storage-go`
- 2. Add the following import statement into any Go source file that will reference Azure Storage:
- ``` Go
- import(
-    storage github.com/Azure/azure-storage-go
- )
- ```
+ 2. Add the following import statement into any Go source file that will reference Azure Storage: `import storage github.com/Azure/azure-storage-go`
  3. Setup your environment.
     - (Windows only) Download the [Azure Storage Emulator](https://azure.microsoft.com/documentation/articles/storage-use-emulator/).
     - If you don't already have one, [create a Storage Account](https://docs.microsoft.com/en-us/azure/storage/storage-create-storage-account).
