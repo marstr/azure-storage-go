@@ -1,9 +1,24 @@
 # Azure Storage SDK for Go
 [![GoDoc](https://godoc.org/github.com/Azure/azure-storage-go?status.svg)](https://godoc.org/github.com/Azure/azure-storage-go) [![Build Status](https://travis-ci.org/Azure/azure-storage-go.svg?branch=master)](https://travis-ci.org/Azure/azure-storage-go) [![Go Report Card](https://goreportcard.com/badge/github.com/Azure/azure-storage-go)](https://goreportcard.com/report/github.com/Azure/azure-storage-go)
 
-The `github.com/Azure/azure-sdk-for-go/storage` package is used to perform operations in Azure Storage Service. To manage your storage accounts (Azure Resource Manager / ARM), use the [github.com/Azure/azure-sdk-for-go/arm/storage](https://github.com/Azure/azure-sdk-for-go/tree/master/arm/storage) package. For your classic storage accounts (Azure Service Management / ASM), use [github.com/Azure/azure-sdk-for-go/management/storageservice](https://github.com/Azure/azure-sdk-for-go/tree/master/management/storageservice) package.
+The `github.com/Azure/azure-sdk-for-go/storage` package is used to perform REST operations against the [Azure Storage Service](https://docs.microsoft.com/en-us/azure/storage/). To manage your storage accounts (Azure Resource Manager / ARM), use the [github.com/Azure/azure-sdk-for-go/arm/storage](https://github.com/Azure/azure-sdk-for-go/tree/master/arm/storage) package. For your classic storage accounts (Azure Service Management / ASM), use [github.com/Azure/azure-sdk-for-go/management/storageservice](https://github.com/Azure/azure-sdk-for-go/tree/master/management/storageservice) package.
 
 This package includes support for [Azure Storage Emulator](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)
+
+# Getting Started
+
+ 1. `go get -u github.com/Azure/azure-storage-go`
+ 2. Add the following import statement into any Go source file that will reference Azure Storage:
+ ``` Go
+ import(
+    storage github.com/Azure/azure-storage-go
+ )
+ ```
+ 3. Setup your environment.
+    - (Windows only) Download the [Azure Storage Emulator](https://azure.microsoft.com/documentation/articles/storage-use-emulator/).
+    - If you don't already have one, [create a Storage Account](https://docs.microsoft.com/en-us/azure/storage/storage-create-storage-account).
+      - Take note of your Subscription ID, Azure Storage Account Name, and Azure Storage Account Key. They'll all be necessary for using this library.
+ 4. Checkout our existing [samples](https://github.com/Azure-Samples?q=Storage&language=go).
 
 # Contributing
 
