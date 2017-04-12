@@ -25,3 +25,50 @@ When contributing, please conform to the following practices:
  - Run [golint](https://github.com/golang/lint) to conform to standard naming conventions.
  - Run [go vet](https://golang.org/cmd/vet/) to catch common Go mistakes.
  - Use [GoASTScanner/gas](https://github.com/GoASTScanner/gas) to ensure there are no common security violations in your contribution.
+ - Run [go test](https://golang.org/cmd/go/#hdr-Test_packages) to catch possible bugs in the code.
+   - This project uses HTTP recordings for testing.
+   - The recorder should be attached to the client before calling the functions to test and later stopped.
+
+``` go
+func (s *StorageQueueSuite) TestQueueExists(c *chk.C) {
+cli := getQueueClient(c)
+rec := cli.client.appendRecorder(c)
+defer rec.Stop()
+
+queue1 := cli.GetQueueReference(queueName(c, "nonexistent"))
+ok, err := queue1.Exists()
+c.Assert(err, chk.IsNil)
+c.Assert(ok, chk.Equals, false)
+
+queue2 := cli.GetQueueReference(queueName(c, "exisiting"))
+c.Assert(queue2.Create(nil), chk.IsNil)
+defer queue2.Delete(nil)
+
+ok, err = queue2.Exists()
+c.Assert(err, chk.IsNil)
+c.Assert(ok, chk.Equals, true)
+}
+```
+
+   - Important note: all HTTP requests in the recording must be unique: different bodies, headers (`User-Agent`, `Authorization` and `Date` or `x-ms-date` headers are ignored), URLs and methods. As opposed to the example above, the following test is not suitable for recording:
+
+``` go
+func (s *StorageQueueSuite) TestQueueExists(c *chk.C) {
+cli := getQueueClient(c)
+rec := cli.client.appendRecorder(c)
+defer rec.Stop()
+
+queue := cli.GetQueueReference(queueName(c))
+ok, err := queue.Exists()
+c.Assert(err, chk.IsNil)
+c.Assert(ok, chk.Equals, false)
+
+c.Assert(queue.Create(nil), chk.IsNil)
+defer queue.Delete(nil)
+
+ok, err = queue.Exists() // This is the very same request as the one 5 line above
+// The test replayer gets confused and the test fails in the last line
+c.Assert(err, chk.IsNil)
+c.Assert(ok, chk.Equals, true)
+}
+```
