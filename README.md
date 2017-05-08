@@ -1,4 +1,7 @@
 # Azure Storage SDK for Go
+
+> **NOTE:** This repository is now deprecated and won't be available in the future. Its contents have been moved back to [Azure SDK for Go](https://github.com/Azure/azure-sdk-for-go). For more information, see [this PR](https://github.com/Azure/azure-sdk-for-go/pull/597).
+
 [![GoDoc](https://godoc.org/github.com/Azure/azure-storage-go?status.svg)](https://godoc.org/github.com/Azure/azure-storage-go) [![Build Status](https://travis-ci.org/Azure/azure-storage-go.svg?branch=master)](https://travis-ci.org/Azure/azure-storage-go) [![Go Report Card](https://goreportcard.com/badge/github.com/Azure/azure-storage-go)](https://goreportcard.com/report/github.com/Azure/azure-storage-go)
 
 The `github.com/Azure/azure-sdk-for-go/storage` package is used to perform REST operations against the [Azure Storage Service](https://docs.microsoft.com/en-us/azure/storage/). To manage your storage accounts (Azure Resource Manager / ARM), use the [github.com/Azure/azure-sdk-for-go/arm/storage](https://github.com/Azure/azure-sdk-for-go/tree/master/arm/storage) package. For your classic storage accounts (Azure Service Management / ASM), use [github.com/Azure/azure-sdk-for-go/management/storageservice](https://github.com/Azure/azure-sdk-for-go/tree/master/management/storageservice) package.
