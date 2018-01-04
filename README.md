@@ -1,6 +1,6 @@
 # Azure Storage SDK for Go
 
-> **NOTE:** This repository is now deprecated and won't be available in the future. Its contents have been moved back to [Azure SDK for Go](https://github.com/Azure/azure-sdk-for-go). For more information, see [this PR](https://github.com/Azure/azure-sdk-for-go/pull/597).
+> **NOTE:** This repository is deprecated and will be removed in the future. Its original contents are now part of the [Azure SDK for Go](https://github.com/Azure/azure-sdk-for-go)and a new package for Blobs is available from [github.com/Azure/azure-storage-blob-go](https://github.com/Azure/azure-storage-blob-go). For more information, see [Azure/azure-sdk-for-go#597](https://github.com/Azure/azure-sdk-for-go/pull/597).
 
 [![GoDoc](https://godoc.org/github.com/Azure/azure-storage-go?status.svg)](https://godoc.org/github.com/Azure/azure-storage-go) [![Build Status](https://travis-ci.org/Azure/azure-storage-go.svg?branch=master)](https://travis-ci.org/Azure/azure-storage-go) [![Go Report Card](https://goreportcard.com/badge/github.com/Azure/azure-storage-go)](https://goreportcard.com/report/github.com/Azure/azure-storage-go)
 
