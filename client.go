@@ -1,4 +1,6 @@
 // Package storage provides clients for Microsoft Azure Storage Services.
+//
+// Deprecated: Please use github.com/Azure/azure-sdk-for-go or github.com/Azure/azure-storage-blob-go
 package storage
 
 import (

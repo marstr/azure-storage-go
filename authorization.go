@@ -1,4 +1,3 @@
-// Package storage provides clients for Microsoft Azure Storage Services.
 package storage
 
 import (
